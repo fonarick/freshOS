@@ -14,6 +14,6 @@ typedef unsigned long			pthread_t						;
 typedef union													{
 	char						size[4]							;
 	int							align							;
-}
+} pthread_mutexattr_t											;
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 } // namespace std

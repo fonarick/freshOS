@@ -23,7 +23,8 @@ $(INCDIRS):
 	make -C $@
 
 $(OBJS): $(CFILES)
-	$(CC) $(CFLAGS_COMPILE) -c -o $@ $<
+	$(CC) $(CFLAGS_COMPILE) -c -o $@ $(word 1, $(CFILES))
+	$(eval CFILES			 :=	$(filter-out $(word 1, $(CFILES)), $(CFILES)))
 	
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS_LINK) -o $@ $^
