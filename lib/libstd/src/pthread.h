@@ -15,5 +15,14 @@ typedef union													{
 	char						size[4]							;
 	int							align							;
 } pthread_mutexattr_t											;
+// ——————————————————————————————————————————————————————————————
+// ————————————— pthread_mutexattr
+// —————————————	identifier for the kind of mutex
+// —————————————	bit 31 is set if the mutex is to be shared between processes
+// —————————————	bit 0 to 30 contain one of the PTHREAD_MUTEX_ values to identify the type of the mutex
+// ——————————————————————————————————————————————————————————————
+struct pthread_mutexattr										{
+	int							mutexkind						;
+}																;
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 } // namespace std
